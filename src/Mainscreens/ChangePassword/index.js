@@ -2,10 +2,11 @@ import React from 'react';
 import { View,Text,TouchableOpacity, TextInput,ActivityIndicator} from 'react-native';
 import styles from './styles';
 import colors from '../../Config/Colors';
-import {Icon,Toast} from 'native-base';
+import {Icon} from 'native-base';
 import AsyncStorage  from '@react-native-community/async-storage';
 import { LucidaHandwritingItalic } from '../../Config/constant';
 import { connect } from 'react-redux';
+import  Toast  from 'react-native-simple-toast';
 
 class ChangePassword extends React.Component{
     state = {

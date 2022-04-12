@@ -10,6 +10,7 @@ import { Provider } from 'react-redux';
 import Store from './src/Redux/Store';
 import NavigationService from './src/NavigationService';
 import Colors from './src/Config/Colors';
+import { ModalPortal } from 'react-native-modals';
 LogBox.ignoreLogs(['Warning: ...']);
 LogBox.ignoreAllLogs();
 
@@ -118,11 +119,13 @@ class App extends Component {
       <StatusBar/>
       <Provider store={Store}>
         {/* <Root> */}
+      
       <Route
        ref={navigatorRef => {
               NavigationService.setTopLevelNavigator(navigatorRef);
             }}
      />
+      <ModalPortal />
      {/* </Root> */}
       </Provider>
     </NativeBaseProvider>

@@ -1,11 +1,13 @@
 import React from 'react';
-import {View,Text,TouchableOpacity,TextInput,ScrollView,ActivityIndicator, ActionSheetIOS} from 'react-native';
+import {View,Text,TouchableOpacity,TextInput,ScrollView,ActivityIndicator, ActionSheetIOS,Image} from 'react-native';
 import styles from './Styles';
 import colors from '../../Config/Colors';
-import {Icon,Toast,Textarea} from 'native-base';
+import {Icon,Textarea} from 'native-base';
 import AsyncStorage  from '@react-native-community/async-storage';
 import { LucidaHandwritingItalic } from '../../Config/constant';
 import { connect } from 'react-redux';
+import  Toast  from 'react-native-simple-toast';
+
 
 class Feedback extends React.Component{
     state = {
@@ -26,8 +28,11 @@ class Feedback extends React.Component{
           },
         headerLeft: (
           <TouchableOpacity onPress={navigation.toggleDrawer}>
-            <Icon name="md-menu"
-              style={{ marginLeft: 20, fontSize: 30, color: colors.white }} />
+            {/* <Icon name="md-menu"
+              style={{ marginLeft: 20, fontSize: 30, color: colors.white }} /> */}
+              <Image 
+        style={{height:40,width:40, marginLeft: 7}} 
+        source={require('../../Images/menu2.png')}/>
           </TouchableOpacity>
         ),
       })
@@ -62,19 +67,22 @@ class Feedback extends React.Component{
               value = {User.username}
               editable = {false}
               ></TextInput>
-              <Textarea
+             
+               <View style={{borderWidth:1,marginTop:30,height:160}}>
+               <TextInput
               style = { styles.feedbackinput }
               placeholder = 'Write feedback here...'
               multiline
-              rowSpan={6}
-              bordered
+              // rowSpan={6}
+              // bordered
               onChangeText= {text=>this.setState({ Feedback: text })}
               value= { this.state.Feedback }
-              ></Textarea>
+              ></TextInput>
+              </View>
 
               <TouchableOpacity
               style={ styles.sendbtn }
-              onPress= {this.getSend}>
+              onPress= {()=>this.getSend}>
                   {this.props.isFetching
                   ?<ActivityIndicator color={colors.white}/>
                   :<Text style={ styles.btntxt }>Send</Text>

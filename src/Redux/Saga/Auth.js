@@ -1,8 +1,8 @@
 import { put, call, takeEvery, takeLatest } from 'redux-saga/effects';
 import { _get, _post } from '../Api';
-import ToastHelper from '../../Utils/ToastHelper';
 import NavigationService from '../../NavigationService';
 import AsyncStorage from '@react-native-community/async-storage';
+import Toast from 'react-native-simple-toast';
 // import firebase from 'react-native-firebase';
 
 function* fetchVersion(action) {
@@ -17,7 +17,7 @@ function* fetchVersion(action) {
         
     } catch (error) {
         console.log('error : ',error.message) 
-        ToastHelper.show(error.message)
+        Toast.show(error.message)
         yield put({type:'Fetch_Version_Failed'})
     }
 
@@ -33,17 +33,17 @@ function* doLogin(action) {
             // let notfres= yield call(_get,'/firebase_notification?notification_id='+fcmtoken+'&user_id='+res.user.user_id)
             // console.log('notification response : ',notfres)
             AsyncStorage.setItem('User',JSON.stringify(res.user))
-            // ToastHelper.show(res.Message)
+            Toast.show(res.Message)
             yield put({type:'Login_Success',user:res.user})
             NavigationService.navigate('Main')
         }else{
-            // ToastHelper.show(res.Message)
+            Toast.show(res.Message)
             yield put({type:'Login_Failed'}) 
         }
         
     } catch (error) {
         console.log('error : ',error.message) 
-        // ToastHelper.show(error.message)
+        Toast.show(error.message)
         yield put({type:'Login_Failed'})
     }
 
@@ -53,17 +53,17 @@ function* forgotPassword(action) {
     try {
         let res= yield call(_get,action.url)
         if (res.status == 'True') {
-            ToastHelper.show(res.Message)
+            Toast.show(res.Message)
             yield put({type:'Forgot_Password_Success'})
             NavigationService.navigate('LoginsScreen')
         }else{
-            ToastHelper.show(res.Message)
+            Toast.show(res.Message)
             yield put({type:'Forgot_Password_Failed'}) 
         }
         
     } catch (error) {
         console.log('error : ',error.message) 
-        ToastHelper.show(error.message)
+        Toast.show(error.message)
         yield put({type:'Forgot_Password_Failed'})
     }
 

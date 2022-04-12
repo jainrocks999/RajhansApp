@@ -4,6 +4,7 @@ import styles from './Styles';
 import colors from '../../Config/Colors';
 import { LucidaHandwritingItalic } from '../../Config/constant';
 import {Icon,Toast} from 'native-base';
+
 export default class Confirmbooking extends React.Component{
     state = { messages: '' }
 

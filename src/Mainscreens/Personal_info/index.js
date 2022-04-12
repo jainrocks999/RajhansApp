@@ -1,14 +1,16 @@
 import React from 'react';
-import { View,Text,TouchableOpacity,TextInput} from 'react-native';
+import { View,Text,TouchableOpacity,TextInput,Image} from 'react-native';
 import styles from './Styles';
 import colors from '../../Config/Colors';
-import {Icon,Toast} from 'native-base';
+import {Icon} from 'native-base';
 import AsyncStorage  from '@react-native-community/async-storage';
 import { LucidaHandwritingItalic } from '../../Config/constant';
 import Profile from '../../Components/Profile';
 import { connect } from 'react-redux';
 import Modal,{ModalContent,ModalTitle,ModalFooter,ModalButton} from 'react-native-modals';
 import Loader from '../../Components/Loadings';
+import  Toast  from 'react-native-simple-toast';
+
 
 class Personal extends React.Component{
     state = {
@@ -45,8 +47,11 @@ class Personal extends React.Component{
           },
         headerLeft: (
           <TouchableOpacity onPress={navigation.toggleDrawer}>
-            <Icon name="md-menu"
-              style={{ marginLeft: 20, fontSize: 30, color: colors.white }} />
+            {/* <Icon name="md-menu"
+              style={{ marginLeft: 20, fontSize: 30, color: colors.white }} /> */}
+              <Image 
+        style={{height:40,width:40, marginLeft: 7}} 
+        source={require('../../Images/menu2.png')}/>
           </TouchableOpacity>
         ),
       })
@@ -96,7 +101,8 @@ class Personal extends React.Component{
                   }
                 onTouchOutside={() => {
                 this.setState({ visible: false });
-                }}>
+                }}
+                >
                 <ModalContent>
                     <TextInput
                     placeholder= 'New mobile number'

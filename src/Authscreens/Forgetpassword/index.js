@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text,TouchableOpacity,TextInput} from 'react-native';
 import styles from './Styles';
 import colors from '../../Config/Colors'
-import { Toast } from 'native-base';
+import  Toast from 'react-native-simple-toast';
 import Loading from '../../Components/Loadings';
 import { LucidaHandwritingItalic } from '../../Config/constant';
 import { connect } from 'react-redux';

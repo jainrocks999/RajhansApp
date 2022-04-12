@@ -1,16 +1,15 @@
 import { put, call, takeEvery, takeLatest } from 'redux-saga/effects';
 import { _get, _post } from '../Api';
-import ToastHelper from '../../Utils/ToastHelper';
 import NavigationService from '../../NavigationService';
 import AsyncStorage from '@react-native-community/async-storage';
-
+import Toast from 'react-native-simple-toast';
 
 function* confirmBooking(action) {
     try {
         let res= yield call(_get,action.url)
         console.log('confirm booking response : ',res)
         if (res.status === 'True') {
-           ToastHelper.show(res.Message)
+            Toast.show(res.Message)
            let order= yield call(_get,'/personalinfo?user_id='+action.userid)
            if (order) {
             yield put({type:'Order_History_Success',orders:order})
@@ -22,13 +21,13 @@ function* confirmBooking(action) {
                 })
            
         }else{
-            ToastHelper.show(res.Message)
+            Toast.show(res.Message)
             yield put({type:'Booking_Failed'}) 
         }
         
     } catch (error) {
         console.log('error : ',error.message) 
-        ToastHelper.show(error.message)
+        Toast.show(error.message)
         yield put({type:'Booking_Failed'})
     }
 
@@ -39,19 +38,19 @@ function* cancelBooking(action) {
         let res= yield call(_get,action.url)
         console.log('cancel booking response : ',res)
         if (res.success === true) {
-             ToastHelper.show(res.msg)
+            Toast.show(res.msg)
             yield put({type:'Cancel_Booking_Success'})
 
             NavigationService.navigate('HOME')
            
         }else{
-            ToastHelper.show(res.msg)
+            Toast.show(res.msg)
             yield put({type:'Cancel_Booking_Failed'}) 
         }
         
     } catch (error) {
         console.log('error : ',error.message) 
-        ToastHelper.show(error.message)
+        ToasToasttHelper.show(error.message)
         yield put({type:'Cancel_Booking_Failed'})
     }
 
@@ -70,7 +69,7 @@ function* orderHistory(action) {
         
     } catch (error) {
         console.log('error : ',error.message) 
-        ToastHelper.show(error.message)
+        Toast.show(error.message)
         yield put({type:'Order_History_Failed'})
     }
 
@@ -85,13 +84,13 @@ function* fetchSeats(action) {
             yield put({type:'Fetch_Seats_Success',seats:res.seatsDetails})
            
         }else{
-            ToastHelper.show(res.Message)
+            Toast.show(res.Message)
             yield put({type:'Fetch_Seats_Failed'}) 
         }
         
     } catch (error) {
         console.log('error : ',error.message) 
-        ToastHelper.show(error.message)
+        ToastHelToastper.show(error.message)
         yield put({type:'Fetch_Seats_Failed'})
     }
 
@@ -102,7 +101,7 @@ function* cancelSeat(action) {
         let res= yield call(_get,action.url)
         console.log('cancel seat response : ',res)
         if (res.success === true) {
-             ToastHelper.show(res.msg)
+            Toast.show(res.msg)
              if (res.seatsDetails.length>0) {
            
                 yield put({type:'Cancel_Seat_Success',seats:res.seatsDetails})
@@ -118,13 +117,13 @@ function* cancelSeat(action) {
             }
            
         }else{
-            ToastHelper.show(res.msg)
+            Toast.show(res.msg)
             yield put({type:'Cancel_Seat_Failed'}) 
         }
         
     } catch (error) {
         console.log('error : ',error.message) 
-        ToastHelper.show(error.message)
+        Toast.show(error.message)
         yield put({type:'Cancel_Seat_Failed'})
     }
 
@@ -144,13 +143,13 @@ function* cancelSeats(action) {
             }
            
         }else{
-            ToastHelper.show(res.msg)
+            Toast.show(res.msg)
             yield put({type:'Cancel_Seats_Failed'}) 
         }
         
     } catch (error) {
         console.log('error : ',error.message) 
-        ToastHelper.show(error.message)
+        Toast.show(error.message)
         yield put({type:'Cancel_Seats_Failed'})
     }
 

@@ -7,6 +7,7 @@ import Moment from 'moment';
 import { LucidaHandwritingItalic } from '../../Config/constant';
 import { connect } from 'react-redux';
 import ToastHelper from '../../Utils/ToastHelper';
+import Toast from 'react-native-simple-toast';
 class Login extends React.Component{
     
    state = {
@@ -22,13 +23,13 @@ class Login extends React.Component{
    getLogin=()=>{
        const{ name,password } = this.state;
        if(name == ''&& password == ''){
-        //  ToastHelper.show('Please enter username and password')
+         Toast.show('Please enter username and password')
        }
        else if(name == ''){
-        // ToastHelper.show('Please enter username')
+        Toast.show('Please enter username')
        }
        else if(password == ''){
-        // ToastHelper.show('Please enter password')
+        Toast.show('Please enter password')
        }
        else{
          this.props.dispatch({type:'Login_Request',url:'/userlogin?username='+name+'&password='+password})
@@ -50,8 +51,11 @@ class Login extends React.Component{
         headerLeft: (
           <TouchableOpacity onPress={navigation.toggleDrawer}>
 
-            <Icon name="add-circle-outline"
-              style={{ marginLeft: 20, fontSize: 30, color: colors.white }}/>
+            {/* <Icon name="add-circle-outline"
+              style={{ marginLeft: 20, fontSize: 30, color: colors.white }}/> */}
+              <Image 
+        style={{height:40,width:40, marginLeft: 7}} 
+        source={require('../../Images/menu2.png')}/>
           </TouchableOpacity>
         ),
       })

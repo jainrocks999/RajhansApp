@@ -19,8 +19,11 @@ export default class About extends React.Component{
         },
         headerLeft: (
           <TouchableOpacity onPress={navigation.toggleDrawer}>
-            <Icon name="md-menu"
-              style={{ marginLeft: 20, fontSze: 30, color: colors.white}}  />
+            {/* <Icon name="md-menu"
+              style={{ marginLeft: 20, fontSze: 30, color: colors.white}}  /> */}
+              <Image 
+                style={{height:40,width:40, marginLeft: 7}} 
+                source={require('../../Images/menu2.png')}/>
           </TouchableOpacity>
         ),
       })

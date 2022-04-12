@@ -20,7 +20,7 @@ export default StyleSheet.create({
        color: colors.black,
     },
     feedbackinput:{
-        marginTop: 25,
+        marginTop: 0,
         padding: 10,
         fontSize:16,
         color: colors.black,

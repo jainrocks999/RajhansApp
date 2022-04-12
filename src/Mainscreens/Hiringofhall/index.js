@@ -1,5 +1,5 @@
 import React from "react";
-import {View,TouchableOpacity} from 'react-native';
+import {View,TouchableOpacity,Image} from 'react-native';
 import styles from './styles';
 import { Icon } from 'native-base';
 import  colors  from "../../Config/Colors";
@@ -21,8 +21,11 @@ export default class Hiring extends React.Component{
         },
         headerLeft: (
           <TouchableOpacity onPress={navigation.toggleDrawer}>
-            <Icon name="md-menu"
-              style={{ marginLeft: 20, fontSize: 30, color: colors.white}} />
+            {/* <Icon name="md-menu"
+              style={{ marginLeft: 20, fontSize: 30, color: colors.white}} /> */}
+              <Image 
+        style={{height:40,width:40, marginLeft: 7}} 
+        source={require('../../Images/menu2.png')}/>
           </TouchableOpacity>
         ),
       })

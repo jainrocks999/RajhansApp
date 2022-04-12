@@ -1,5 +1,5 @@
 import React from "react";
-import {View, Text, TouchableOpacity,ScrollView} from 'react-native';
+import {View, Text, TouchableOpacity,ScrollView,Image} from 'react-native';
 import styles from './styles';
 import  colors  from "../../Config/Colors";
 import { Icon } from 'native-base';
@@ -98,8 +98,11 @@ export default class Faq extends React.Component{
         },
         headerLeft: (
           <TouchableOpacity onPress={navigation.toggleDrawer}>
-            <Icon name="md-menu"
-              style={{ marginLeft: 20, fontSize: 30, color: colors.white}} />
+            {/* <Icon name="md-menu"
+              style={{ marginLeft: 20, fontSize: 30, color: colors.white}} /> */}
+              <Image 
+        style={{height:40,width:40, marginLeft: 7}} 
+        source={require('../../Images/menu2.png')}/>
           </TouchableOpacity>
         ),
       })

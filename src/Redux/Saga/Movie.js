@@ -1,8 +1,8 @@
 import { put, call, takeEvery, takeLatest } from 'redux-saga/effects';
 import { _get, _post } from '../Api';
-import ToastHelper from '../../Utils/ToastHelper';
 import NavigationService from '../../NavigationService';
 import AsyncStorage from '@react-native-community/async-storage';
+import Toast from 'react-native-simple-toast';
 
 function* fetchDays(action) {
     try {
@@ -16,7 +16,7 @@ function* fetchDays(action) {
         
     } catch (error) {
         console.log('error : ',error.message) 
-        ToastHelper.show(error.message)
+        Toast.show(error.message)
         yield put({type:'Fetch_MovieDays_Failed'})
     }
 
@@ -38,7 +38,7 @@ function* fetchMovie(action) {
         
     } catch (error) {
         console.log('error : ',error.message) 
-        ToastHelper.show(error.message)
+        Toast.show(error.message)
         yield put({type:'Fetch_Movie_Failed'})
     }
 
@@ -63,7 +63,7 @@ function* addToCart(action) {
         
     } catch (error) {
         console.log('error : ',error.message) 
-        ToastHelper.show(error.message)
+        Toast.show(error.message)
         yield put({type:'Add_ToCart_Failed'})
     }
 

@@ -7,13 +7,13 @@ import AsyncStorage  from '@react-native-community/async-storage';
 const Profile=({passwordSelected,mobileSelected})=>{
     const [User,setUser]=useState('')
      
-    useEffect(()=>{
-     getUser=async()=>{
+    useEffect(async()=>{
+    //  getUser=async()=>{
         let userstring=await AsyncStorage.getItem('User')
         let user=JSON.parse(userstring)
         setUser(user)
-     }
-     getUser()
+    //  }
+    //  getUser()
     },[])
 
    const renderFullname =()=>{
