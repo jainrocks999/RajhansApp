@@ -73,7 +73,7 @@ class Preview extends React.Component{
          this.setState({
             name:movieinfo[0].event_name,
             poster:movieinfo[0].POSTER,
-            rating:movieinfo[0].RATING,
+            rating:4,
             starcast:movieinfo[0].STARCAST,
             description:movieinfo[0].DESCRIPTION,
             genre:movieinfo[0].GENRE,
@@ -103,7 +103,7 @@ class Preview extends React.Component{
             </View>
              <Text style={ styles.txtstar }>{ this.state.starcast }</Text>
                   
-            <TouchableOpacity onPress={ this.onTrailerGo }>
+                 <TouchableOpacity onPress={ this.onTrailerGo }>
                   <View style={styles.imgview}>
                    <ImageBackground
                    source={{ uri:this.state.poster }}

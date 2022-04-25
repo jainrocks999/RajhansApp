@@ -46,7 +46,6 @@ static navigationOptions = ({ navigation }) => ({
   ),
 })
 
-  
   UNSAFE_componentWillMount=()=>{
 
     this._getMovies();
@@ -107,7 +106,7 @@ static navigationOptions = ({ navigation }) => ({
  
   render(){
       const {  Movies}= this.state;
-     
+     console.log('thisis is state movies',Movies);
       return(
           <View style={ styles.container }>
           <ScrollView showsVerticalScrollIndicator={false} style={{paddingBottom:10}} refreshControl={

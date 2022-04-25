@@ -19,17 +19,18 @@ function* fetchDays(action) {
         Toast.show(error.message)
         yield put({type:'Fetch_MovieDays_Failed'})
     }
-
 }
 
 function* fetchMovie(action) {
     try {
+        console.log('this is user details',action.moviename,action.moviedate);
         let res= yield call(_get,action.url)
-        console.log('movie response : ',res)
+        console.log('movie response thisis from teting : ',res)
         if (res) {
             var movieinfo =  res.allevents.filter(function (en) {
                 return (en.event_name === action.moviename && en.event_date === action.moviedate) ;
                 });
+                console.log('this is movie info',movieinfo);
             yield put({type:'Fetch_Movie_Success',movie:movieinfo})
            
         }else{
