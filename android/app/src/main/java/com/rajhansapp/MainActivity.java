@@ -1,4 +1,4 @@
-package com.rajhansapp;
+package com.pack.rajhans;
 
 import com.facebook.react.ReactActivity;
 
