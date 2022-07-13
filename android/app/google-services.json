@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "606198373093",
+    "firebase_url": "https://rajhans-496eb.firebaseio.com",
+    "project_id": "rajhans-496eb",
+    "storage_bucket": "rajhans-496eb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:606198373093:android:7a609b2e18744a1f",
+        "android_client_info": {
+          "package_name": "com.pack.rajhans"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "606198373093-fr9rgrd962n8vdatmukborqqumgtu8r7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pack.rajhans",
+            "certificate_hash": "d4445ebf28e9181743b3ef34806d684a70105a7c"
+          }
+        },
+        {
+          "client_id": "606198373093-pjdi63p3af7ivpk166tl2s32ker4qdjf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pack.rajhans",
+            "certificate_hash": "6592edbe1d5b4266af25540ea7408a11c37aa092"
+          }
+        },
+        {
+          "client_id": "606198373093-grdbb86otl9jult7m38d1q4g0cgo7fba.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8obDkCYlS55b-Nchf3rikFkD5Z3LA-14"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "606198373093-grdbb86otl9jult7m38d1q4g0cgo7fba.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "606198373093-c61cpvae848shpueak4qopd45encnkrs.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.pack.rajhans"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
