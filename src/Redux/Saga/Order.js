@@ -9,7 +9,7 @@ function* confirmBooking(action) {
         let res= yield call(_get,action.url)
         console.log('confirm booking response : ',res)
         if (res.status === 'True') {
-            // Toast.show(res.Message)
+            Toast.show(res.Message)
            let order= yield call(_get,'/personalinfo?user_id='+action.userid)
            if (order) {
             yield put({type:'Order_History_Success',orders:order})

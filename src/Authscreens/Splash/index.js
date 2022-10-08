@@ -15,14 +15,13 @@ class Splash extends React.Component{
 
     componentDidMount = async() =>{
         let version=DeviceInfo.getVersion()
+        console.log('version : ',version)
         this.props.dispatch({type:'Fetch_Version_Request',url:'/app_version'})
         this.setState({version})
-    }
-    
-    componentWillReceiveProps=(nextProps)=>{
-        const {version}=this.state
-        console.log('version : ',version)
-        console.log('nextProps : ',nextProps);
+        }
+
+        componentWillReceiveProps=(nextProps)=>{
+            const {version}=this.state
           if (nextProps.iosversion && nextProps.androidversion) {
             if (Platform.OS=='ios'? nextProps.iosversion == version : nextProps.androidversion == version) {
                 

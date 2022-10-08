@@ -51,7 +51,6 @@ export default StyleSheet.create({
          marginHorizontal: 5,                 
      },
      btntxt:{
-         
         color: colors.white,
         fontFamily:LucidaHandwritingItalic,
      },

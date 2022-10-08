@@ -23,7 +23,6 @@ import Route from './src/Navigation';
 import { ModalPortal } from 'react-native-modals';
 import messaging from '@react-native-firebase/messaging';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import Axios from './src/Redux/Axios';
 LogBox.ignoreLogs(['Warning: ...']);
 LogBox.ignoreAllLogs();
 
@@ -61,7 +60,6 @@ const App= () => {
             console.log('App new token : ',fcmtoken)
               Axios.get('https://lcahgoa.in/index.php/app/firebase_notification?notification_id='+fcmtoken+'&user_id='+user.user_id).then(success=>{
                   console.log('new token '+success)
-                  console.log("yyooggii ::",'https://lcahgoa.in/index.php/app/firebase_notification?notification_id='+fcmtoken+'&user_id='+user.user_id)
                   if (success.status) {
                    AsyncStorage.setItem('fcmToken', fcmtoken);
                   }

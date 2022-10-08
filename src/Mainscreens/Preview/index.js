@@ -36,7 +36,7 @@ class Preview extends React.Component{
        let moviedate=this.props.route.params.moviedate
         this.props.dispatch({type:'Fetch_Movie_Request',url:'/event',moviename,moviedate})
 
-     } 
+     }
  
    
 

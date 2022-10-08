@@ -30,7 +30,7 @@ function* doLogin(action) {
            AsyncStorage.setItem('User',JSON.stringify(res.user))
             Toast.show(res.Message)
             yield put({type:'Login_Success',user:res.user})
-            action.navigation.replace('Main')
+            action.navigation.navigate('Main')
         }else{
             Toast.show(res.Message)
             yield put({type:'Login_Failed'}) 

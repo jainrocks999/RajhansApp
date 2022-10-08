@@ -37,16 +37,11 @@ export default class Hiring extends React.Component{
               <DrawerHeader
               title="Hiring of Hall"
               />
-              <View
-              style={{flex:1,width:'98%',alignSelf:'center',}}
-              >
-
                <WebView
                 source={{uri: 'https://lcahgoa.in/index.php/app/hiringforhall/'}}
-                style={{marginTop: 10,borderWidth:1,}}
+                style={{marginTop: 10}}
                 startInLoadingState
-                />
-                </View>
+              />
             </View>
         )
     }

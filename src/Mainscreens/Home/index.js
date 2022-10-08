@@ -143,7 +143,7 @@ static navigationOptions = ({ navigation }) => ({
             <RefreshControl onRefresh={this._getMovies1} refreshing={this.props.isFetching}/>
           }>
           <View style={{backgroundColor:colors.white,borderRadius: 6,marginTop:10}}>
-          <Text style={{ color:'#ff0000', margin:5,fontFamily:LucidaHandwritingItalic, }}>Booking would commence 48 hours prior to the day of show at 1200 hrs and would be available till two hour prior to each show.</Text>    
+          <Text style={{ color:'#ff0000', margin:5,fontFamily:LucidaHandwritingItalic, }}>Booking would commence 48 hours prior to the day of show at 1200 hrs and would be available till one and a half hour prior to each show.</Text>    
           </View>
          {NowShowing.length>0 || CommingSoon.length>0? 
           <View>

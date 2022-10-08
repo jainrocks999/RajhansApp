@@ -63,7 +63,7 @@ class Announcement extends React.Component{
                      source={require('../../Images/voice.png')}
                      style={{ height:12,width:12,marginTop:5 }}
                      ></Image>
-                     <Text style={{ color:colors.black, marginLeft:2, fontSize:15,width:'95%',}}>{item.message}</Text>
+                     <Text style={{ color:colors.black, marginLeft:2, fontSize:15 }}>{item.message}</Text>
                    </View>
                )
             
