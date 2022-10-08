@@ -56,7 +56,7 @@ export default class Contact_us extends React.Component{
                  </View>
                  <View style={[styles.detailview,{marginLeft:18}]}>
                  <Text style={styles.title}>Phone</Text>
-                 <Text style={styles.phntxt}>9822685396</Text>
+                 <Text style={styles.phntxt}>8983645396</Text>
                  <View style={{ borderBottomColor:colors.grey, borderBottomWidth:1,marginTop:5}} />
                  </View>
                </View>

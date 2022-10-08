@@ -48,7 +48,9 @@ class Feedback extends React.Component{
     }
 
     getSend=()=>{
-        const {User,Feedback} = this.state;
+      console.log('User : ');
+      const {User,Feedback} = this.state;
+      console.log('User : ',User);
         if( Feedback === '' ){
             Toast.show('Please write feedback', Toast.LONG);
         }else{
@@ -87,7 +89,7 @@ class Feedback extends React.Component{
 
               <TouchableOpacity
               style={ styles.sendbtn }
-              onPress= {()=>this.getSend}>
+              onPress= {()=>this.getSend()}>
                   {this.props.isFetching
                   ?<ActivityIndicator color={colors.white}/>
                   :<Text style={ styles.btntxt }>Send</Text>

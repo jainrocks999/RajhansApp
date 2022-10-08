@@ -7,6 +7,7 @@ function* movieSuggestion(action) {
     try {
         let res= yield call(_get,action.url)
          console.log('movie suggestion response : ',res)
+         console.log('movie suggestion response action: ',action)
         if (res.status == 'True') {
             Toast.show(res.Message)
             yield put({type:'Movie_Suggestion_Success'})

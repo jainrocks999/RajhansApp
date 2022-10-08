@@ -2,7 +2,7 @@ const initialOther={
     isFetching:false,
     News:[]
 }
-
+ 
 export default (state=initialOther,action)=>{
   switch (action.type) {
       case 'Movie_Suggestion_Request':

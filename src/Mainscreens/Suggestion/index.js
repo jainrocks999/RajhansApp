@@ -24,13 +24,15 @@ class Suggestion extends React.Component{
         )
     }
     getSuggestion=()=>{
+        console.log('sfsflksjdflksdjf');
         const{ User,suggestion } = this.state;
         if(suggestion === ''){
             Toast.show('Please write suggestion', Toast.LONG);
         }
         else{
             this.props.dispatch({type:'Movie_Suggestion_Request',
-            url:'/moviesuggestion?email_id='+User.username+'&comments='+suggestion.replace,navigation:this.props.navigation})
+            url:'/moviesuggestion?email_id='+User.username+'&comments='+suggestion,navigation:this.props.navigation})
+            
         }
     }
     render(){
@@ -65,7 +67,7 @@ class Suggestion extends React.Component{
  
               <TouchableOpacity
               style={ styles.sendbtn }
-              onPress={()=> this.getSuggestion}>
+              onPress={()=> this.getSuggestion()}>
                   {this.props.isFetching
                    ?<ActivityIndicator color={colors.white}/>
                    :<Text style={ styles.btntxt }>Send</Text>}

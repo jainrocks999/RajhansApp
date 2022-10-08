@@ -34,6 +34,7 @@ export default class Confirmbooking extends React.Component{
 
     UNSAFE_componentWillMount = () =>{
         const msgs = this.props.route.params.msg
+        console.log('msgs  : ',msgs );
         this.setState({
             messages: msgs
         })
