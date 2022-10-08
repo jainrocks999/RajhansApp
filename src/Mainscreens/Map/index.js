@@ -57,7 +57,7 @@ class HallView extends React.Component{
 
       onMessage(data) {
        
-          console.log(data);
+          console.log('sfsdflsdkjhflsdkf',data);
           const { event_id,ort_id,name,date,time,vanue,user_type,u_dependent } = this.state;
           // console.log('https://lcahgoa.in/index.php/app/addtocart/?csrf_test_name=' + "9503452c1433fcd9d7cb0f3f98bdac76" + "&event_id=" + event_id + "&catname=" + data.catname + "&catid=" + data.catid + "&ort_id=" + ort_id +
           // "&catprice=" + data.catprice + "&event=" + name + "&time=" + time + "&date=" + date +
@@ -124,7 +124,7 @@ class HallView extends React.Component{
                  javaScriptEnabled={true}
                  onMessage={(event)=> this.onMessage(JSON.parse(event.nativeEvent.data))}
                  ></WebView>
-                 {console.log('url','https://lcahgoa.in/index.php/app/seatmap1?eventid='+event_id+'&user_id='+user_id+'&user_type='+user_type+'&width='+width)}
+                 {/* {console.log('url','https://lcahgoa.in/index.php/app/seatmap1?eventid='+event_id+'&user_id='+user_id+'&user_type='+user_type+'&width='+width)} */}
              </View>
          )
      }
@@ -136,3 +136,7 @@ const mapStateToProps=(state)=>{
     }
   }
   export default connect(mapStateToProps)(HallView)
+
+
+
+  // git remote add RajhansApp https://github.com/jainrocks999/RajhansApp.git

@@ -9,6 +9,9 @@ export default StyleSheet.create({
         backgroundColor: colors.transparent,
     },
     listview:{
+        width:'95%',
+        justifyContent:'space-between',
+        alignSelf:'center',
         flexDirection:'row',
         backgroundColor:Colors.white,
         borderBottomWidth:0.8,

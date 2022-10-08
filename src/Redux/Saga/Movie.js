@@ -26,6 +26,7 @@ function* fetchMovie(action) {
         console.log('this is user details',action.moviename,action.moviedate);
         let res= yield call(_get,action.url)
         console.log('movie response thisis from teting : ',res)
+        console.log('movie response thisis from teting action : ',action)
         if (res) {
             var movieinfo =  res.allevents.filter(function (en) {
                 return (en.event_name === action.moviename && en.event_date === action.moviedate) ;
@@ -44,11 +45,11 @@ function* fetchMovie(action) {
     }
 
 }
-
 function* addToCart(action) {
     try {
         let res= yield call(_get,action.url)
         console.log('add cart response : ',res)
+        console.log('add cart response action.url: ',action.url)
         if (res.orderdetail.status === 'True') {
            
             yield put({type:'Add_ToCart_Success',order:res})
